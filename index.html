@@ -178,6 +178,31 @@
   .stagger.visible > *:nth-child(5){opacity:1;transform:none;transition-delay:.32s}
   .stagger.visible > *:nth-child(6){opacity:1;transform:none;transition-delay:.40s}
 
+  /* WORK TABS */
+  .work-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:2px;overflow:hidden;width:fit-content}
+  .work-tab{background:var(--card);color:var(--muted);font-family:var(--fb);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;border:none;cursor:pointer;transition:background .2s,color .2s;border-right:1px solid var(--border)}
+  .work-tab:last-child{border-right:none}
+  .work-tab.active{background:var(--amber);color:#0a0804}
+  .work-tab:not(.active):hover{background:#181208;color:var(--text)}
+
+  /* PROJECT LINK */
+  .project-link{display:inline-flex;align-items:center;gap:6px;color:var(--amber);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;margin-top:1rem;transition:gap .2s}
+  .project-link:hover{gap:10px}
+
+  /* NEW PROJECT VISUAL COLORS */
+  .pv-cafe{background:linear-gradient(135deg,#1a1008,#0a0804)}
+  .pv-cafe::before{background:radial-gradient(circle at 40% 50%,rgba(255,140,60,.4) 0%,transparent 65%)}
+  .pv-cake{background:linear-gradient(135deg,#1a0d10,#0a0804)}
+  .pv-cake::before{background:radial-gradient(circle at 60% 40%,rgba(255,100,120,.35) 0%,transparent 65%)}
+  .pv-gift{background:linear-gradient(135deg,#160a1a,#0a0804)}
+  .pv-gift::before{background:radial-gradient(circle at 35% 55%,rgba(200,100,255,.3) 0%,transparent 65%)}
+  .pv-teacher{background:linear-gradient(135deg,#0a1418,#0a0804)}
+  .pv-teacher::before{background:radial-gradient(circle at 65% 35%,rgba(79,195,255,.3) 0%,transparent 65%)}
+  .pv-dash{background:linear-gradient(135deg,#0a1408,#0a0804)}
+  .pv-dash::before{background:radial-gradient(circle at 50% 50%,rgba(126,255,160,.25) 0%,transparent 65%)}
+  .pv-yt{background:linear-gradient(135deg,#1a0808,#0a0804)}
+  .pv-yt::before{background:radial-gradient(circle at 45% 45%,rgba(255,60,60,.35) 0%,transparent 65%)}
+
   @media(max-width:768px){
     .nav-links{display:none}
     .about-grid{grid-template-columns:1fr;gap:3rem}
@@ -329,7 +354,85 @@
 <section id="work">
   <div class="section-label">Selected Work</div>
   <h2 class="section-h2 reveal">THINGS WE'VE<br><em>ACTUALLY SHIPPED.</em></h2>
-  <div class="projects-grid stagger" style="margin-top:4rem">
+
+  <div class="work-tabs reveal" style="margin-top:3rem">
+    <button class="work-tab active" data-tab="client">Client Projects</button>
+    <button class="work-tab" data-tab="personal">Personal & Experimental</button>
+  </div>
+
+  <!-- CLIENT -->
+  <div class="projects-grid stagger" id="tab-client" style="margin-top:2rem">
+
+    <div class="project-card">
+      <div class="project-visual pv-cafe"><span class="pv-emoji">🎉</span></div>
+      <div class="project-body">
+        <div class="project-badge">Client · Food & Hospitality · Khandala</div>
+        <div class="project-title">CAFE CELEBRATION</div>
+        <p class="project-desc">Full website for Khandala's favourite café — custom cursor, filterable menu, live Google reviews, cake order enquiry form, Maps embed & WhatsApp CTA. Women-owned. 4.6★ on Google (39+ reviews).</p>
+        <div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">JS</span><span class="stack-item">Custom Cursor</span><span class="stack-item">WhatsApp</span></div>
+        <a class="project-link" href="https://livedashboardsite.github.io/cafecelebration/" target="_blank">View Live ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual pv-cake"><span class="pv-emoji">🎂</span></div>
+      <div class="project-body">
+        <div class="project-badge">Client · Artisan Bakery · Ganpatipule · v2</div>
+        <div class="project-title">EAT-N-TREAT</div>
+        <p class="project-desc">Premium cinematic website — floating 3D cake sphere, particle system, custom cursor, draggable carousel, glassmorphism review cards, FAQ accordion, Google Maps & WhatsApp order flow. 5.0★ rated women-owned bakery.</p>
+        <div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">Canvas Particles</span><span class="stack-item">3D UI</span><span class="stack-item">WhatsApp</span></div>
+        <a class="project-link" href="https://livedashboardsite.github.io/TRIALS-ON-WAY/" target="_blank">View Live ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual pv-gift"><span class="pv-emoji">🎁</span></div>
+      <div class="project-body">
+        <div class="project-badge">Client · Handcrafted Gifts · E-commerce</div>
+        <div class="project-title">WRAPPED WITH LOVE 24</div>
+        <p class="project-desc">Animated luxury landing page with typewriter hero, loading screen, scroll reveals & marquee — hair accessories, embroidery, photo keychains, greeting cards. Per-product WhatsApp CTAs throughout.</p>
+        <div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">JS Animations</span><span class="stack-item">Typewriter FX</span><span class="stack-item">WhatsApp</span></div>
+        <a class="project-link" href="https://livedashboardsite.github.io/wrappedwithlove24/" target="_blank">View Live ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual pv-teacher"><span class="pv-emoji">🎓</span></div>
+      <div class="project-body">
+        <div class="project-badge">Client · EdTech · Sales Landing Page</div>
+        <div class="project-title">TEACHERS HUB</div>
+        <p class="project-desc">High-conversion sales page for a 1400+ printable worksheet bundle — floating emoji animations, urgency hooks, stats strip, bonus section & pulsing WhatsApp CTA. ₹999 → ₹199 limited offer.</p>
+        <div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">Conversion Copy</span><span class="stack-item">CSS Animations</span><span class="stack-item">WhatsApp</span></div>
+        <a class="project-link" href="https://livedashboardsite.github.io/Teachers_hub/" target="_blank">View Live ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual pv-dash"><span class="pv-emoji">📊</span></div>
+      <div class="project-body">
+        <div class="project-badge">Client · SaaS · Affiliate Dashboard</div>
+        <div class="project-title">LEADZIIN DASHBOARD</div>
+        <p class="project-desc">Full affiliate dashboard UI — animated count-up earnings stats, sales tracking, referral system, downline sales, coupon codes, payout details & role-based sidebar. Gradient purple/pink theme.</p>
+        <div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">JS</span><span class="stack-item">Count-Up Animations</span><span class="stack-item">Dashboard UI</span></div>
+        <a class="project-link" href="https://livedashboardsite.github.io/Leadziin/" target="_blank">View Live ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-visual pv-yt"><span class="pv-emoji">▶️</span></div>
+      <div class="project-body">
+        <div class="project-badge">Tool · Web App · Media</div>
+        <div class="project-title">YTSTREAM</div>
+        <p class="project-desc">Browser-based YouTube streaming tool — paste any link, stream in-browser without ads. Download, copy stream URL, thumbnail grab, speed control.</p>
+        <div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">JS</span><span class="stack-item">cobalt.tools API</span></div>
+        <a class="project-link" href="https://livedashboardsite.github.io/Youtube-/" target="_blank">View Live ↗</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PERSONAL -->
+  <div class="projects-grid stagger" id="tab-personal" style="margin-top:2rem;display:none">
     <div class="project-card"><div class="project-visual pv-iot"><span class="pv-emoji">🏆</span></div><div class="project-body"><div class="project-badge">Award Winner · IoT / Hardware</div><div class="project-title">SMART GATE SYSTEM V2.0</div><p class="project-desc">1st Prize at PRAKALP-2025 — School, Screening & District Level (MPCOE). IoT-based automated gate with sensor integration.</p><div class="project-stack"><span class="stack-item">Hardware</span><span class="stack-item">IoT</span><span class="stack-item">Automation</span></div></div></div>
     <div class="project-card"><div class="project-visual pv-game"><span class="pv-emoji">🎮</span></div><div class="project-body"><div class="project-badge">Game Dev · Unity</div><div class="project-title">3D CRICKET GAME</div><p class="project-desc">Multiplayer 3D cricket game with gyroscope controls, optimized for 2GB RAM devices. Full Python backend.</p><div class="project-stack"><span class="stack-item">Unity</span><span class="stack-item">C#</span><span class="stack-item">Python</span></div></div></div>
     <div class="project-card"><div class="project-visual pv-ai"><span class="pv-emoji">🤖</span></div><div class="project-body"><div class="project-badge">AI App · Claude API</div><div class="project-title">BYTE — AI CODING ASSISTANT</div><p class="project-desc">Single-file HTML/JS app powered by Claude API. Runs via local Python server for a seamless dev workflow.</p><div class="project-stack"><span class="stack-item">Claude API</span><span class="stack-item">JavaScript</span><span class="stack-item">Python</span></div></div></div>
@@ -337,6 +440,7 @@
     <div class="project-card"><div class="project-visual pv-event"><span class="pv-emoji">🎉</span></div><div class="project-body"><div class="project-badge">Design · Event Content</div><div class="project-title">SCHOOL EVENT PAGES & TEASERS</div><p class="project-desc">5+ years of invitation cards, animated event pages, council-reveal sequences, and social campaigns for Jindal Vidya Mandir.</p><div class="project-stack"><span class="stack-item">HTML/CSS</span><span class="stack-item">Video</span><span class="stack-item">Canva</span></div></div></div>
     <div class="project-card"><div class="project-visual pv-music"><span class="pv-emoji">🚀</span></div><div class="project-body"><div class="project-badge">Startup · SWARLY</div><div class="project-title">SWARLY MUSIC PLATFORM</div><p class="project-desc">Co-founder & UI/UX Designer for an Indian music discovery platform. Full product design ownership from concept to prototype.</p><div class="project-stack"><span class="stack-item">Figma</span><span class="stack-item">Product Design</span><span class="stack-item">Startup</span></div></div></div>
   </div>
+
 </section>
 
 <!-- ABOUT -->
@@ -384,6 +488,21 @@
 </footer>
 
 <script>
+  // Tab switching
+  document.querySelectorAll('.work-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.work-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      document.getElementById('tab-client').style.display = tab === 'client' ? 'grid' : 'none';
+      document.getElementById('tab-personal').style.display = tab === 'personal' ? 'grid' : 'none';
+      // re-trigger stagger
+      const active = document.getElementById('tab-' + tab);
+      active.classList.remove('visible');
+      setTimeout(() => { active.classList.add('visible'); }, 50);
+    });
+  });
+
   // Cursor glow
   const glow = document.getElementById('cursor-glow');
   document.addEventListener('mousemove', e => {
